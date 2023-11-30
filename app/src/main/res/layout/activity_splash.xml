@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="LearnWell"
         android:textSize="50sp"
-        android:fontFamily="@font/nunito_sans"
+        style="@style/subheaderFont"
         android:textStyle="bold"
         android:textColor="?attr/colorPrimaryDark" />
 

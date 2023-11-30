@@ -11,5 +11,17 @@
         <item name="android:windowBackground">@color/white</item>
     </style>
 
+    <style name="headerFont" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/noto_serif_bold</item>
+    </style>
+
+    <style name="subheaderFont" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+    </style>
+
+    <style name="bodyFont" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/noto_sans</item>
+    </style>
+
 </resources>
 

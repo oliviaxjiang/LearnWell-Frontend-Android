@@ -21,10 +21,11 @@
 
         <ImageView
             android:id="@+id/goBackIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:src="@drawable/goback_icon"
-            app:tint="@android:color/white" />
+            app:tint="@android:color/white"
+            android:layout_margin="5dp"/>
 
         <View
             android:layout_width="0dp"
@@ -36,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/nunito_sans"
+            style="@style/headerFont"
             android:text="New Post"
             android:textColor="#FFF"
             android:textSize="35sp" />
@@ -60,28 +61,28 @@
             android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            style="@style/bodyFont"
             android:hint="Title" />
 
         <EditText
             android:id="@+id/editTextContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            style="@style/bodyFont"
             android:hint="Content" />
 
         <EditText
             android:id="@+id/editTextCourse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            style="@style/bodyFont"
             android:hint="Course" />
 
         <EditText
             android:id="@+id/editTextAvailability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans"
+            style="@style/bodyFont"
             android:hint="Availability" />
 
 
@@ -103,7 +104,7 @@
         android:text="Seeking Help"
         android:textColor="@color/black"
         android:textSize="15.sp"
-        android:fontFamily="@font/nunito_sans"
+        style="@style/bodyFont"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.353"
@@ -118,7 +119,7 @@
         android:text="Offering Help"
         android:textSize="15.sp"
         android:textColor="@color/black"
-        android:fontFamily="@font/nunito_sans"
+        style="@style/bodyFont"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -132,13 +133,11 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textAlignment="center"
-        android:text="Are you aiming to be tutor or tutoee?"
-        android:fontFamily="@font/nunito_sans"
+        android:text="Are you aiming to be tutor or tutee?"
+        style="@style/bodyFont"
         app:layout_constraintBottom_toTopOf="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postInputBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
