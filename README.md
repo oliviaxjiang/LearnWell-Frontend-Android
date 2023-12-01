@@ -5,6 +5,8 @@
 
 LearnWell is a tutoring app where users can sign up as either tutors or tutees and submit posts containing their needs, skills, and availability. This app functions as a forum for tutees to find a suitable tutor, and vice versa.
 
+click this link to see a video tutorial: https://youtu.be/vQfBR4FBKzs
+
 ### Main Page
 
 A splash screen containing the app name will be displayed as the app is launching. Once the app is launched, it will open to the home page, where the user can browse through a scrollable list of posts from tutors and tutees. Each post contains the user’s username at the top, the title and contents for the actual post, the relevant course, and the availability of the user. The post will also indicate at the top whether the user is seeking a tutor or a tutee. This home page also contains a search bar; if the user types a specific keyword in the search bar, then the list of posts displayed will be filtered to just those containing that keyword (e.g. searching for a specific class).
