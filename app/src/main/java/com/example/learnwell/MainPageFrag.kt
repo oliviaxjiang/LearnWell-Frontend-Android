@@ -1,11 +1,14 @@
 package com.example.learnwell
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextClock
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,11 +44,32 @@ class MainPageFrag : Fragment() {
         adapter = PostsAdaptor(postList)
         recyclerView.adapter = adapter
 
+        val searchEditText: EditText = view.findViewById(R.id.searchEditText)
+
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                filterPosts(s.toString())
+            }
+            override fun afterTextChanged(s: Editable) {}
+        })
+
         return view
     }
     fun addNewPost(newPost: Post) {
         postList.add(0, newPost)
         adapter.notifyItemInserted(0)
         recyclerView.scrollToPosition(0)
+    }
+
+    private fun filterPosts(text: String) {
+        val filteredList = postList.filter {
+            it.postTitle.contains(text, ignoreCase = true) ||
+                    it.postContent.contains(text, ignoreCase = true) ||
+                    it.course.contains(text, ignoreCase = true) ||
+                    it.availability.contains(text, ignoreCase = true)||
+                    it.seeking.contains(text, ignoreCase = true)
+        }
+        adapter.updateList(filteredList)
     }
 }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class PostsAdaptor(
-    val postList : List<Post>,
+    var postList : List<Post>,
 ) : RecyclerView.Adapter<PostsAdaptor.MyPostViewHolder>() {
 
     class MyPostViewHolder(view : View) : ViewHolder(view) {
@@ -27,6 +27,11 @@ class PostsAdaptor(
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.post_cell, parent, false)
         return MyPostViewHolder(view)
+    }
+
+    fun updateList(newList: List<Post>) {
+        postList = newList
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: MyPostViewHolder, pos: Int) {
