@@ -1,5 +1,6 @@
 package com.example.learnwell
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,9 +22,16 @@ class UserFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.user_frag, container, false)
-//        val text = view.findViewById<TextView>(R.id.textView)
-//        text.text = "Welcome to LearnWell"
-
-        return inflater.inflate(R.layout.user_frag, container, false)
+        val registerButton: Button = view.findViewById(R.id.registerButton)
+        registerButton.setOnClickListener {
+            val intent = Intent(activity, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+        val loginButton: Button = view.findViewById(R.id.loginButton)
+        loginButton.setOnClickListener {
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        return view
     }
 }
