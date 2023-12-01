@@ -8,6 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
@@ -18,8 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav = findViewById(R.id.bottomNav)
 
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
             openFragment(MainPageFrag.newInstance())
+            fetchPosts()
+        }
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -62,5 +71,36 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val ADD_POST_REQUEST_CODE = 1
+    }
+
+    private fun fetchPosts() {
+        val url = "http://your-backend-url/api/posts"
+
+        val client = OkHttpClient()
+        val request = Request.Builder().url(url).get().build()
+
+        client.newCall(request).enqueue(object : okhttp3.Callback {
+            override fun onFailure(call: okhttp3.Call, e: IOException) {
+                Log.e("MainActivity", "Error fetching posts: ${e.message}")
+            }
+
+            override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
+                response.body?.string()?.let { responseBody ->
+                    val posts = parsePosts(responseBody)
+                }
+            }
+        })
+    }
+
+    private fun parsePosts(json: String): List<Post>? {
+        return try {
+            val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+            val type = Types.newParameterizedType(List::class.java, Post::class.java)
+            val jsonAdapter: JsonAdapter<List<Post>> = moshi.adapter(type)
+            jsonAdapter.fromJson(json)
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error parsing posts: ${e.message}")
+            null
+        }
     }
 }
