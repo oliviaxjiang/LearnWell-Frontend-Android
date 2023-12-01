@@ -1,3 +1,6 @@
+
+![hack challenge](https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/60edf52c-c2eb-4544-9120-8ebbd891bae4)
+
 ### Introduction
 
 LearnWell is a tutoring app where users can sign up as either tutors or tutees and submit posts containing their needs, skills, and availability. This app functions as a forum for tutees to find a suitable tutor, and vice versa.
