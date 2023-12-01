@@ -1,5 +1,5 @@
 
-![hack challenge](https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/60edf52c-c2eb-4544-9120-8ebbd891bae4)
+<img width="1512" alt="Screenshot 2023-12-01 at 4 53 09 PM" src="https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/b066c27f-8dd4-47e3-9755-c117efa7ab2e">
 
 ### Introduction
 
