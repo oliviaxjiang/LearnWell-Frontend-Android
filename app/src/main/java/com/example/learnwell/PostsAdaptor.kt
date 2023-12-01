@@ -20,6 +20,7 @@ class PostsAdaptor(
         val postContent : TextView = view.findViewById(R.id.postContent)
         val course : TextView = view.findViewById(R.id.courseContent)
         val availability : TextView = view.findViewById(R.id.availabilityContent)
+        val seeking : TextView = view.findViewById(R.id.tutorOrTutee)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyPostViewHolder {
@@ -37,6 +38,8 @@ class PostsAdaptor(
         holder.course.text = post.course
 
         holder.availability.text = post.availability
+
+        holder.seeking.text = post.seeking
 
         holder.itemView.setOnClickListener {
 //            val intent = Intent(holder.itemView.context, SongDetailActivity::class.java)

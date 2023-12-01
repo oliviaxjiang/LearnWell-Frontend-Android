@@ -1,5 +1,6 @@
 package com.example.learnwell
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_add -> {
                     val intent = Intent(this, AddActivity::class.java)
-                    startActivity(intent)
+                    startActivityForResult(intent, ADD_POST_REQUEST_CODE)
                     true
                 }
                 R.id.nav_user -> {
@@ -46,5 +47,20 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.mainFragmentContainer, fragment)
             commit()
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == ADD_POST_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            data?.getSerializableExtra("NEW_POST")?.let { newPostData ->
+                val newPost = newPostData as Post
+                (supportFragmentManager.findFragmentById(R.id.mainFragmentContainer) as? MainPageFrag)?.addNewPost(newPost)
+            }
+        }
+    }
+
+    companion object {
+        private const val ADD_POST_REQUEST_CODE = 1
     }
 }

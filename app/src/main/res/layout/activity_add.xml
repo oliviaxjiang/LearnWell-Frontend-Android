@@ -97,35 +97,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/seekingHelp"
+        style="@style/bodyFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="Seeking Help"
+        android:textColor="@color/black"
+        android:textSize="15.sp"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1"
+        app:layout_constraintEnd_toEndOf="@+id/switch1"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/switch1"
+        app:layout_constraintVertical_bias="0.508" />
+
     <Switch
         android:id="@+id/switch1"
         android:layout_width="134dp"
         android:layout_height="78dp"
-        android:text="Seeking Help"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="15.sp"
         style="@style/bodyFont"
+        android:thumbTint="?attr/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postInputBox"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="0.731"
+        />
 
     <TextView
         android:id="@+id/offerhelp"
+        style="@style/bodyFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Offering Help"
-        android:textSize="15.sp"
         android:textColor="@color/black"
-        style="@style/bodyFont"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:textSize="15.sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekingHelp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toEndOf="@+id/switch1"
-        app:layout_constraintTop_toBottomOf="@+id/postInputBox"
-        app:layout_constraintVertical_bias="0.664" />
+        app:layout_constraintTop_toTopOf="@+id/seekingHelp"
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:id="@+id/textView2"
