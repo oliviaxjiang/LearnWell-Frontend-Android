@@ -21,3 +21,5 @@ By clicking the user button on the menu bar, the user can navigate their profile
 
 <img width="1512" alt="Screenshot 2023-12-01 at 4 56 12 PM" src="https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/fd1b6cf3-4943-419f-982b-93a5def1479a">
 
+Backend Repository: https://github.com/L1nda-H/hack-challenge
+
