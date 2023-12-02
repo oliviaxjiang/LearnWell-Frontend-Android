@@ -19,7 +19,8 @@ The user also has the ability to add a new post, which they can access by clicki
 
 By clicking the user button on the menu bar, the user can navigate their profile containing their user information. This includes a photo, their name, their need, their current courses, and their previously taken courses. By clicking the “Create an account” button at the top of the screen, the user is sent to a registration page. On this page, they can fill out their name, need, current courses, and past courses, and register by clicking the register button at the bottom. If they wish to return to the user page without registering, they can click the back icon at the top left of the screen. The user page also contains a button to log in; if the user clicks this, they will be sent to a page where they can input their username and password. Once again, they can log in by clicking the log in button, or they can return to the user page by clicking the back icon.
 
-<img width="1512" alt="Screenshot 2023-12-01 at 4 56 12 PM" src="https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/fd1b6cf3-4943-419f-982b-93a5def1479a">
+<img width="1512" alt="Screenshot 2023-12-01 at 10 19 26 PM" src="https://github.com/oliviaxjiang/LearnWell-Frontend-Android/assets/149902487/aa67da12-cc3b-47e8-b8a6-39494d6654f4">
+
 
 Backend Repository: https://github.com/L1nda-H/hack-challenge
 
