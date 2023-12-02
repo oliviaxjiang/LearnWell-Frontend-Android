@@ -1,5 +1,6 @@
 package com.example.learnwell
 
+import LearnWellApi
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -18,6 +19,10 @@ class MainPageFrag : Fragment() {
 
     private lateinit var adapter: PostsAdaptor
     private lateinit var recyclerView: RecyclerView
+
+    private val learnWellApi: LearnWellApi by lazy {
+        RetrofitClient.retrofit.create(LearnWellApi::class.java)
+    }
 
     companion object {
         fun newInstance() = MainPageFrag()

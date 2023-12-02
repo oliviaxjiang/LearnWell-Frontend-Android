@@ -1,5 +1,6 @@
 package com.example.learnwell
 
+import LearnWellApi
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -18,6 +19,10 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
+
+    private val learnWellApi: LearnWellApi by lazy {
+        RetrofitClient.retrofit.create(LearnWellApi::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchPosts() {
-        val url = "http://your-backend-url/api/posts"
+        val url = "http://34.86.69.4/api/posts"
 
         val client = OkHttpClient()
         val request = Request.Builder().url(url).get().build()

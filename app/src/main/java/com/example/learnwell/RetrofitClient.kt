@@ -9,7 +9,7 @@ object RetrofitClient {
     private val client = OkHttpClient.Builder().build()
 
     val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("http://your-backend-url/")
+        .baseUrl("http://34.86.69.4/")
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .client(client)
         .build()

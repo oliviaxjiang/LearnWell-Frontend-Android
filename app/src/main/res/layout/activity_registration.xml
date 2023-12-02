@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="2dp"
-            android:text="NAME"
+            android:text="Username"
             android:textColor="@color/colorAccentDark"
             android:textSize="22sp" />
 
@@ -64,26 +64,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Type name here"
+            android:text="Type username here"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/needTitle"
+            android:id="@+id/netidTitle"
             style="@style/subheaderFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="2dp"
-            android:text="NEED"
+            android:text="Netid"
             android:textColor="@color/colorAccentDark"
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/needContent"
+            android:id="@+id/editNetid"
             style="@style/bodyFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Type need here"
+            android:text="Type netid here"
             android:textSize="18sp" />
 
         <TextView

@@ -47,13 +47,6 @@ class PostsAdaptor(
         holder.seeking.text = post.seeking
 
         holder.itemView.setOnClickListener {
-//            val intent = Intent(holder.itemView.context, SongDetailActivity::class.java)
-//            intent.putExtra("POSITION", pos)
-//            intent.putExtra("NAME", song.songName)
-//            intent.putExtra("ARTIST", song.songArtist)
-//            intent.putExtra("ALBUM", song.songAlbum)
-//            intent.putExtra("IMAGE", song.albumImg)
-//            (holder.itemView.context as Activity).startActivityForResult(intent, REQUEST_CODE)
 
         }
 
