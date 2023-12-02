@@ -26,6 +26,9 @@ interface LearnWellApi {
 
     @POST("/api/posts/")
     suspend fun createPost(@Body post: Post): Response<Post>
+
+    @GET("posts")
+    suspend fun getPosts(): Response<List<Post>>
 }
 
 

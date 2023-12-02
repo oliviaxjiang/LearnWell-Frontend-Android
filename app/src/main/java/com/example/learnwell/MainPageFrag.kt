@@ -12,8 +12,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextClock
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.launch
 
 class MainPageFrag : Fragment() {
 
@@ -49,6 +51,8 @@ class MainPageFrag : Fragment() {
         adapter = PostsAdaptor(postList)
         recyclerView.adapter = adapter
 
+        fetchPosts()
+
         val searchEditText: EditText = view.findViewById(R.id.searchEditText)
 
         searchEditText.addTextChangedListener(object : TextWatcher {
@@ -65,6 +69,21 @@ class MainPageFrag : Fragment() {
         postList.add(0, newPost)
         adapter.notifyItemInserted(0)
         recyclerView.scrollToPosition(0)
+    }
+
+    private fun fetchPosts() {
+        lifecycleScope.launch {
+            try {
+                val response = learnWellApi.getPosts()
+                if (response.isSuccessful && response.body() != null) {
+                    postList.clear()
+                    postList.addAll(response.body()!!)
+                    adapter.notifyDataSetChanged()
+                } else {
+                }
+            } catch (e: Exception) {
+            }
+        }
     }
 
     private fun filterPosts(text: String) {
